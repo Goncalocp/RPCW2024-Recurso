@@ -1,0 +1,327 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/untitled-ontology-34/> .
+
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-34> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Book ;
+           rdfs:range :Author .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#hasAward
+:hasAward rdf:type owl:ObjectProperty ;
+          rdfs:domain :Book ;
+          rdfs:range :Award .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#hasCharacter
+:hasCharacter rdf:type owl:ObjectProperty ;
+              rdfs:domain :Book ;
+              rdfs:range :Character .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#hasGenre
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:domain :Book ;
+          rdfs:range :Genre .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#hasPublisher
+:hasPublisher rdf:type owl:ObjectProperty ;
+              rdfs:domain :Book ;
+              rdfs:range :Publisher .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#hasRating
+:hasRating rdf:type owl:ObjectProperty ;
+           rdfs:domain :Book ;
+           rdfs:range :Rating .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#bbeScore
+:bbeScore rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#bbeVotes
+:bbeVotes rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#bookId
+:bookId rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Book ;
+        rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#bookformat
+:bookformat rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Book ;
+            rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#coverImg
+:coverImg rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Book ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#firstPublishDate
+:firstPublishDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Book ;
+                  rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#fiveStarRating
+:fiveStarRating rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Rating ;
+                rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#fourStarRating
+:fourStarRating rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Rating ;
+                rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#isbn
+:isbn rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Book ;
+      rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#language
+:language rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#likedPercent
+:likedPercent rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Book ;
+              rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#nameAuthor
+:nameAuthor rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Author ;
+            rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#nameAward
+:nameAward rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Award ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#nameCharacter
+:nameCharacter rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Character ;
+               rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#nameGenre
+:nameGenre rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Genre ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#namePublisher
+:namePublisher rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Publisher ;
+               rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#numRatings
+:numRatings rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Book ;
+            rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#oneStarRating
+:oneStarRating rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Rating ;
+               rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#pages
+:pages rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#price
+:price rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#publishDate
+:publishDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Book ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Book ;
+        rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#ratingStarValue
+:ratingStarValue rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Rating ;
+                 rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#setting
+:setting rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Book ;
+         rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#threeStarRating
+:threeStarRating rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Rating ;
+                 rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#twoStarRating
+:twoStarRating rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Rating ;
+               rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Author
+:Author rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Award
+:Award rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Book
+:Book rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Character
+:Character rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Publisher
+:Publisher rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Rating
+:Rating rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Katniss_Everdeen
+:Katniss_Everdeen rdf:type owl:NamedIndividual ,
+                           :Character ;
+                  :nameCharacter "Katniss Everdeen" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Scholastic_Press
+:Scholastic_Press rdf:type owl:NamedIndividual ,
+                           :Publisher ;
+                  :namePublisher "Scholastic Press" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Suzanne_Collins
+:Suzanne_Collins rdf:type owl:NamedIndividual ,
+                          :Author ;
+                 :nameAuthor "Suzzane Collins" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Young_Adult
+:Young_Adult rdf:type owl:NamedIndividual ,
+                      :Genre ;
+             :nameGenre "Young adult" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#classificacao1
+:classificacao1 rdf:type owl:NamedIndividual ,
+                         :Rating ;
+                :fiveStarRating "93557"^^xsd:int ;
+                :fourStarRating "171994"^^xsd:int ;
+                :oneStarRating "3444695"^^xsd:int ;
+                :threeStarRating "745221"^^xsd:int ;
+                :twoStarRating "1921313"^^xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#2767052-the-hunger-games
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-34#2767052-the-hunger-games> rdf:type owl:NamedIndividual ,
+                                                                                       :Book ;
+                                                                              :hasAuthor :Suzanne_Collins ;
+                                                                              :hasAward <http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Locus_Award_Nominee_for_Best_Young_Adult_Book_(2009)> ;
+                                                                              :hasCharacter :Katniss_Everdeen ;
+                                                                              :hasGenre :Young_Adult ;
+                                                                              :hasPublisher :Scholastic_Press ;
+                                                                              :hasRating :classificacao1 ;
+                                                                              :bbeScore "2993816"^^xsd:int ;
+                                                                              :bbeVotes "30516"^^xsd:int ;
+                                                                              :bookId "2767052-the-hunger-games" ;
+                                                                              :bookformat "Hardcover" ;
+                                                                              :coverImg "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722975l/2767052.jpg" ;
+                                                                              :description "WINNING MEANS FAME AND FORTUNE.LOSING MEANS CERTAIN DEATH.THE HUNGER GAMES HAVE BEGUN. . . .In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol is harsh and cruel and keeps the districts in line by forcing them all to send one boy and once girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV.Sixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to dead before\\u2014and survival, for her, is second nature. Without really meaning to, she becomes a contender. But if she is to win, she will have to start making choices that weight survival against humanity and life against love." ;
+                                                                              :firstPublishDate "06/09/02" ;
+                                                                              :isbn "9780439023481" ;
+                                                                              :language "English" ;
+                                                                              :likedPercent "96"^^xsd:int ;
+                                                                              :numRatings "6376780"^^xsd:int ;
+                                                                              :pages "374"^^xsd:int ;
+                                                                              :price "5.09" ;
+                                                                              :publishDate "09/14/08" ;
+                                                                              :setting "Disctrict 12" ,
+                                                                                       "Panem (United States)" ;
+                                                                              :title "The Hunger Games" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Locus_Award_Nominee_for_Best_Young_Adult_Book_(2009)
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-34#Locus_Award_Nominee_for_Best_Young_Adult_Book_(2009)> rdf:type owl:NamedIndividual ,
+                                                                                                                   :Award ;
+                                                                                                          :nameAward "Locus Award" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

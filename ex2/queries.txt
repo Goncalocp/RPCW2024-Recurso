@@ -1,0 +1,63 @@
+1. Quantas livros estão presentes na ontologia?
+
+SELECT (COUNT(?livro) AS ?numLivros) WHERE {
+  ?livro rdf:type :Book .
+}
+
+
+2. Quais os títulos dos livros em que um dos autores tem apelido "Austen"? (lista de títulos ordenada alfabeticamente)
+
+SELECT ?titulo WHERE {
+  ?livro rdf:type :Book ;
+         :hasAuthor ?autor .
+  ?autor :nameAuthor ?nome .
+  FILTER regex(?nome, "Austen", "i")
+  ?livro :title ?titulo .
+}
+ORDER BY ?titulo
+
+3. Qual a distribuição de livros por género? (lista de géneros sem repetições e ordenada alfabeticamente em que a cada género está associado o número de livros pertencente a esse género)
+
+
+SELECT ?genero (COUNT(?livro) AS ?numLivros) WHERE {
+  ?livro rdf:type :Book ;
+         :hasGenre ?generoInd .
+  ?generoInd :nameGenre ?genero .
+}
+GROUP BY ?genero
+ORDER BY ?genero
+
+
+4. Produz uma lista de pares, nome do personagem e a lista de livros onde esse personagem aparece, ordenada alfabeticamente por nome de personagem;
+
+SELECT ?nomePersonagem (GROUP_CONCAT(?titulo; SEPARATOR=", ") AS ?livros) WHERE {
+  ?personagem rdf:type :Character ;
+              :nameCharacter ?nomePersonagem .
+  ?livro rdf:type :Book ;
+         :hasCharacter ?personagem .
+  ?livro :title ?titulo .
+}
+GROUP BY ?nomePersonagem
+ORDER BY ?nomePersonagem
+
+
+5. ual a distribuição de livros por autor? (lista de autores sem repetições e ordenada alfabeticamente em que a cada autor está associado o número de livros escritos por esse autor);
+
+SELECT ?nomeAutor (COUNT(?livro) AS ?numLivros) WHERE {
+  ?livro rdf:type :Book ;
+         :hasAuthor ?autorInd .
+  ?autorInd :nameAuthor ?nomeAutor .
+}
+GROUP BY ?nomeAutor
+ORDER BY ?nomeAutor
+
+
+6.Quais os títulos dos livros pertencentes ao género "Adventure"? (lista ordenada alfabeticamente de títulos)
+
+SELECT ?titulo WHERE {
+  ?livro rdf:type :Book ;
+         :hasGenre ?generoInd .
+  ?generoInd :nameGenre "Adventure" .
+  ?livro :title ?titulo .
+}
+ORDER BY ?titulo
